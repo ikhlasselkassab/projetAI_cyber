@@ -1,0 +1,24 @@
+{
+    "fine_tuning": {
+        "bart": {
+            "cybersecurity_dataset": "datasets/data/cybersecurity/dataset.json",
+            "original_dataset": "datasets/data/original_data/dataset_with_original_data.json",
+            "model_save_path": "pretrained_models/bart"
+        },
+        "gpt2": {
+            "cybersecurity_dataset": "datasets/data/cybersecurity/dataset.json",
+            "original_dataset": "datasets/data/original_data/dataset_with_original_data.json",
+            "model_save_path": "pretrained_models/gpt2"
+        }
+    },
+    "generation": {
+        "model_paths": {
+            "bart": "pretrained_models/bart",
+            "gpt2": "pretrained_models/gpt2"
+        },
+        "output_path": {
+            "bart": "results/bart/data_gen.json",
+            "gpt2": "results/gpt2/data_gen.json"
+        }
+    }
+}

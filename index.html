@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberAI</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111114;
+            color: #e6e6e6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            background: #1b1b1e;
+            color: #e6e6e6;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #4ac6ff;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #4ac6ff;
+            color: #111114;
+            border-radius: 4px;
+        }
+
+        .container {
+            text-align: center;
+            margin: auto;
+            width: 50%;
+            margin-top: 120px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #4ac6ff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #1b1b1e;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            font-style: italic;
+        }
+
+        .form-container {
+            background: #2a2a2d;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            width: 100%;
+        }
+
+        .form-group i {
+            margin-right: 10px;
+            color: #4ac6ff;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 0;
+            border: 1px solid #3a3a3d;
+            border-radius: 6px;
+            background-color: #1b1b1e;
+            color: #e6e6e6;
+            font-size: 16px;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #4ac6ff;
+        }
+
+        .form-container textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #4ac6ff;
+            color: #111114;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #379bd1;
+        }
+
+        .result {
+            margin-top: 25px;
+            background-color: #1b1b1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-in-out;
+            max-width: 80%;
+            margin: 25px auto;
+        }
+
+        .result h2 {
+            margin-bottom: 15px;
+            color: #4ac6ff;
+            font-size: 22px;
+            animation: slideIn 0.8s ease-in-out;
+        }
+
+        .result p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #e6e6e6;
+            text-align: left;
+            animation: slideUp 0.8s ease-in-out;
+            word-wrap: break-word; /* Allows wrapping to the next line when necessary */
+            word-break: normal; /* Prevents words from breaking in the middle */
+            overflow-wrap: break-word; /* Ensures long words wrap to the next line */
+            white-space: normal;
+            margin-bottom: 15px;
+        }
+
+        .result-container {
+            background-color: #1b1b1e;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .result-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">CyberAI</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/service">Service</a>
+            <a href="/contact">Contact</a>
+            <a href="/login">Login</a>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="description">
+            <p> By inputting relevant information, this tool uses advanced AI models to generate concise title, summary, and actionable recommendations. This streamlines the process of identifying and responding to potential security threats, saving you time and enhancing your decision-making.</p>
+        </div>
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <label for="keywords"><i class="fa fa-key"></i></label>
+                    <input type="text" id="keywords" name="keywords" placeholder="Enter keywords..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="content"><i class="fa fa-align-left"></i></label>
+                    <textarea id="content" name="content" placeholder="Enter the content..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="published_date"><i class="fa fa-calendar"></i></label>
+                    <input type="date" id="published_date" name="published_date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="datasource"><i class="fa fa-database"></i></label>
+                    <input type="text" id="datasource" name="datasource" placeholder="Enter the data source..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="link_to_datasource"><i class="fa fa-link"></i></label>
+                    <input type="url" id="link_to_datasource" name="link_to_datasource" placeholder="Enter the link to data source..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="platform"><i class="fa fa-desktop"></i></label>
+                    <input type="text" id="platform" name="platform" placeholder="Enter the platform..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="site"><i class="fa fa-globe"></i></label>
+                    <input type="text" id="site" name="site" placeholder="Enter the site..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="stealer"><i class="fa fa-user-secret"></i></label>
+                    <input type="text" id="stealer" name="stealer" placeholder="Enter the stealer..." required>
+                </div>
+
+                <button type="submit">Generate</button>
+            </form>
+        </div>
+        <div class="result" id="resultContainer">
+            <div class="result-container">
+                <h2>Generated Output:</h2>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('button[type="submit"]').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            const data = {
+                keywords: document.getElementById('keywords').value,
+                content: document.getElementById('content').value,
+                publishedDate: document.getElementById('published_date').value,
+                datasource: document.getElementById('datasource').value,
+                linkToDatasource: document.getElementById('link_to_datasource').value,
+                platform: document.getElementById('platform').value,
+                site: document.getElementById('site').value,
+                stealer: document.getElementById('stealer').value
+            };
+
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json().catch(() => {
+                    throw new Error('Invalid JSON response');
+                });
+            })
+            .then(data => {
+                document.getElementById('result').innerText = data.generated_output;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'An error occurred. Please try again.';
+            });
+        });
+    </script>
+</body>
+</html>
+
